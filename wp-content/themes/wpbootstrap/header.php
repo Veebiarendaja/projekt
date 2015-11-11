@@ -19,28 +19,26 @@
 <div class="header-wrap">
     <div class="navigation-wrap">
         <div class="menu-block1">
-            <div class="menu_side0">
-                <a href="" style="padding-right: 40px">
-                    <li>Gallery</li>
-                </a>
-                <a href="">
-                    <li>Elandilim</li>
-                </a>
-            </div>
+            <?php wp_nav_menu(array('menu' => 'menublock1')); ?>
+            <!--a href="" style="padding-right: 40px">
+                <li>Gallery</li>
+            </a>
+            <a href="">
+                <li>Elandilim</li>
+            </a-->
         </div><div class="menu-block-logo">
             <div class="pea_logo">
-                <img src="../wordpress/wp-content/themes/wpbootstrap/img/logo.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri() ?>/img/logo.jpg" alt="">
             </div>
         </div>
         <div class="menu-block2">
-            <div class="menu_side1">
-                <a href="" style="padding-right: 40px">
-                    <li>Life</li>
-                </a>
-                <a href="">
-                    <li>Home</li>
-                </a>
-            </div>
+            <?php wp_nav_menu(array('menu' => 'menublock2')); ?>
+            <!--a href="" style="padding-right: 40px">
+                <li>Life</li>
+            </a>
+            <a-- href="">
+                <li>Home</li>
+            </a-->
         </div>
     </div>
 </div>

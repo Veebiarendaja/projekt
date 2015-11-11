@@ -36,11 +36,15 @@ a {
     width: 60%;
     height: 100px;
 }
-
-li {
+.navigation-wrap li {
     margin: auto;
     display: inline-block;
     font-size: 20px;
+}
+
+.navigation-wrap ul {
+    margin: 0;
+    padding: 0;
 }
 
 .menu-block1 {
@@ -50,12 +54,15 @@ li {
     width: 30%;
 }
 
-.menu_side0 {
+.menu-menublock1-container {
     float: left;
     height: 30px;
     width: 100%;
     border-bottom: solid 2px darkred;
+}
 
+.menu-menublock1-container li {
+    padding-right: 10%;
 }
 
 .menu-block2 {
@@ -66,13 +73,12 @@ li {
     float: right;
 }
 
-.menu_side1 {
+.menu-menublock2-container {
     float: right;
     height: 30px;
     width: 100%;
     text-align: right;
     border-bottom: solid 2px darkred;
-
 }
 
 .menu-block-logo {
@@ -99,6 +105,10 @@ li {
     margin: auto;
     width: 60%;
     min-height: 700px;
+}
+
+.post {
+    border: 2px solid darkred;
 }
 
 /*Area of footer*/
