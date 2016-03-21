@@ -5,28 +5,58 @@
 ?>
 
 <?php get_header(); ?>
-<div class="content-wrap global-container">
-    <div class="gallery">
-        <?php query_posts(array('category_name' => 'gallery'));
-        while (have_posts()) : the_post(); ?>
-            <?php // image gallery content
-            if (has_shortcode($post->post_content, 'gallery')) {
-                $gallery = get_post_gallery_images($post->ID);
+    <div class="content-wrap global-container">
+        <div class="gallery">
+            <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type' => 'attachment',
+                'post_status' => 'inherit',
+                'posts_per_page' => 4,
+                'paged' => $paged,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field' => 'slug',
+                        'terms' => 'blog-gal',
+                    )
+                )
+            );
+            query_posts($args);
 
-                foreach ($gallery as $image) {// Loop through each image in each gallery
+            if (have_posts()) {
+                while (have_posts()) : the_post();
                     echo '<div class="img-container">
-            <div class="img-wrap">
-                <img src=" ' . str_replace('-150x150', '', $image) . ' " alt="">
-            </div><div class="kirjeldus">
-                <div class="kirjeldus-tekst"><h4>Pealkiri Kassid</h4>
-                    <p> 100cm 500cm 1990</p>
+                        <div class="img-wrap">
+                            <img class="image-lightbox" src=" ' . $post->guid . ' " alt="'.get_post_meta( $post->ID, '_wp_attachment_image_alt', true ).'">
+                        </div><div class="kirjeldus">
+                            <div class="kirjeldus-tekst">
+                            <h4>' . $post->post_title . '</h4>
+                            <h5>' . $post->post_excerpt . '</h5>
+                                <p>' . $post->post_content . '</p>
+                            </div>
+                        </div>
+                    </div>';
+                    ?>
+                <?php endwhile; ?>
+                <div class="gallery-navigation">
+                    <div class="alignleft"><?php next_posts_link(__('next')); ?></div>
+                    <div class="alignright"><?php previous_posts_link(__('previous')); ?></div>
+                </div>
+            <?php } ?>
+            <div class="random">
+                <div class="boxjq"></div>
+                <div class="boxjq"></div>
+                <div class="boxjq"></div>
+                <div class="boxjq"></div>
+                <div class="boxjq"></div>
+            </div>
+            <div id="lightbox">
+                <p>Close</p>
+                <div id="lightbox-content">
+                    <img src="#" />
                 </div>
             </div>
-        </div>';
-                }
-            } ?>
-            <?php wp_link_pages(); ?>
-            <?php endwhile; ?>
+        </div>
     </div>
-</div>
 <?php get_footer(); ?>
