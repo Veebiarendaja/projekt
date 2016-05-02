@@ -41,6 +41,7 @@
 
 <?php register_nav_menu( 'primary', __( 'Primary Menu', 'Elandilim' ) );
 
+//Attachment category
 function wptp_add_categories_to_attachments() {
     register_taxonomy_for_object_type( 'category', 'attachment' );
 }
@@ -61,5 +62,4 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
 ?>

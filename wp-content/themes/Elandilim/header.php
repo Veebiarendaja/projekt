@@ -5,7 +5,6 @@
 
     <!-- Le styles -->
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory'); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>

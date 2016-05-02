@@ -2,29 +2,26 @@ $(document).ready(function () {
     //LightBox
     $('.image-lightbox').click(function (e) {
 
-        //prevent default action (hyperlink)
         e.preventDefault();
 
-        //Get clicked link href
-        var image_href = $(this).attr("src");
+        //klikitud pildi url
+        var image_url = $(this).attr("src");
 
-        //place href as img src value
-        $('#lightbox-content').html('<img src="' + image_href + '" />');
-        //show lightbox window - you could use .show('fast') for a transition
+        //pildi lähtekoodi lisamine
+        $('#lightbox-content').html('<img src="' + image_url + '" />');
+        //LightBoxi kuvamine
         $('#lightbox').show();
-
     });
 
-    //Click anywhere on the page to get rid of lightbox window
-    $('html').on('click', '#lightbox', function () { //must use live, as the lightbox element is inserted into the DOM
+    //Peida LightBox
+    $('html').on('click', '#lightbox', function () {
         $('#lightbox').hide();
     });
 
-    $('image-lightbox').on('click', '#lightbox-content', function(){
-       $value = $(this).next().filter('.image-lightbox');
-        alert($value);
-    });
 
+    $('.image-lightbox, #lightbox-content').bind('dragstart contextmenu', function(){
+        return false;
+    });
 
     //Menu show
     var $window = $(window);

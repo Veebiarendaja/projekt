@@ -1,13 +1,16 @@
 <?php get_header(); ?>
-
+<?php
+/*
+* Template Name: Blogi
+*/
+?>
     <div class="content-wrap global-container">
-        <h1 style="text-align: center">ART PAGE</h1>
 
         <?php
-        $postperpage = 4;
-        // the query to set the posts per page to 3
+        $postperpage = 5;
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        query_posts('posts_per_page=' . $postperpage . '&paged' . $paged . '&offset=' . (($paged - 1) * $postperpage));
+        query_posts('posts_per_page=' . $postperpage . '&paged' .
+            $paged . '&offset=' . (($paged - 1) * $postperpage) . '&category_name=blogi');
         ?>
 
         <!-- the loop -->
@@ -16,6 +19,8 @@
                 <div class="posts-thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('posts-thumbnail'); ?>
+                        <?php else : ?>
+                        <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" height="150px">
                     <?php endif; ?>
                 </div><div class="posts-contentwrap">
                     <h2 class="posts-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><p
@@ -30,7 +35,7 @@
         <?php endwhile; ?>
 
         <?php else : ?>
-            <!-- No posts found -->
+
         <?php endif; ?>
 
         <!-- pagination -->

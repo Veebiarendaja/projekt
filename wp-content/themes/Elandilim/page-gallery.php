@@ -19,7 +19,7 @@
                     array(
                         'taxonomy' => 'category',
                         'field' => 'slug',
-                        'terms' => 'blog-gal',
+                        'terms' => 'galerii',
                     )
                 )
             );
@@ -29,7 +29,8 @@
                 while (have_posts()) : the_post();
                     echo '<div class="img-container">
                         <div class="img-wrap">
-                            <img class="image-lightbox" src=" ' . $post->guid . ' " alt="' . get_post_meta($post->ID, '_wp_attachment_image_alt', true) . '">
+                            <img class="image-lightbox"
+                            src=" ' . $post->guid . ' " alt="' . get_post_meta($post->ID, '_wp_attachment_image_alt', true) . '">
                         </div><div class="kirjeldus-wrap">
                         <div class="kirjeldus"><div class="kirjeldus-tekst">
                             <h4>' . $post->post_title . '</h4>
@@ -47,7 +48,7 @@
                 </div>
             <?php } ?>
             <div id="lightbox">
-                <p>Close</p>
+                <p>Sulgemiseks vajutagi ekraanil</p>
                 <div id="lightbox-content">
                     <img src="#"/>
                 </div>

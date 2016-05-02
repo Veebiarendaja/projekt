@@ -273,6 +273,7 @@ li, ul {
 }
 
 .kirjeldus {
+    margin-bottom: 5px;
     display: block;
     box-sizing: border-box;
     border-bottom: 1px solid transparent;
@@ -288,6 +289,15 @@ li, ul {
 
 .kirjeldus-tekst {
     padding: 5px;
+}
+
+.kirjeldus-tekst h4 {
+    font-size: 20px;
+}
+
+.kirjeldus-tekst h5 {
+    font-weight: inherit;
+    font-size: 14px;
 }
 
 .kirjeldus-tekst p {
@@ -309,6 +319,10 @@ li, ul {
     width:100%;
     height:100vh;
     background: rgba(122,122,122, 0.5);
+}
+
+#lightbox  p {
+    margin: 0 0 0 10px;
 }
 
 #lightbox-content {
@@ -426,6 +440,11 @@ li, ul {
     display: inline-block;
     width: 20%;
 }
+
+.read-more:hover {
+    text-decoration: underline #800080;
+}
+
 .posts-text p,
 .read-more a {
     font-size: 18px;
@@ -500,6 +519,13 @@ li, ul {
     }
 }
 
+@media screen and (max-width: 410px) {
+    .global-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 /* Menu */
 @media screen and (max-width: 700px) {
     .menu-block1,
@@ -535,6 +561,24 @@ li, ul {
     .kirjeldus {
         width: 100%;
         margin: 20px auto;
+    }
+}
+
+/* Blogi */
+@media screen and (max-width: 870px) {
+    .posts-thumbnail {
+        width: 100%;
+        margin-bottom: 1px;
+    }
+    .posts-contentwrap {
+        width: 100%;
+    }
+    .read-more {
+        width: 100%;
+        text-align: right;
+    }
+    .read-more a {
+        margin-right: 2px;
     }
 }
 
