@@ -48,7 +48,7 @@
                 </div>
             <?php } ?>
             <div id="lightbox">
-                <p>Sulgemiseks vajutagi ekraanil</p>
+                <p>Sulgemiseks vajutage ekraanil</p>
                 <div id="lightbox-content">
                     <img src="#"/>
                 </div>

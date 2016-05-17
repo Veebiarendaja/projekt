@@ -13,7 +13,6 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     text-decoration: none;
-    font-family: Arial;
     background: url("img/generic-bg.jpg") repeat;
 }
 
@@ -349,29 +348,6 @@ li, ul {
     width: 100%;
 }
 
-.about-slider {
-    height: 50px;
-    overflow: hidden;
-}
-
-.slide {
-    -webkit-animation:font 1s 1;
-    -o-animation:font 1s 1;
-    animation:font 1s 1;
-    animation-fill-mode:forwards;
-}
-
-@keyframes font {
-    from {
-        margin-top: 0;
-
-    }
-
-    to {
-        margin-top: -52px;
-    }
-}
-
 .about-text {
     font-size: 18px;
     border-top: 1px solid #800080;
@@ -386,9 +362,11 @@ li, ul {
     vertical-align: top;
 }
 
-.about-thumbnail img {
+.about-thumbnail-mobile {
+    display: none;
+    width: 100%;
+    text-align: center;
 }
-
 /*=== BLOG POSTS ====*/
 .posts {
     display: inline-block;
@@ -484,6 +462,11 @@ li, ul {
     margin-top: 15px;
 }
 
+.post-text p {
+    font-family: 'Oswald', sans-serif !important;
+
+}
+
 .post-published {
     float: right;
     margin: 0;
@@ -494,7 +477,25 @@ li, ul {
 .footer-wrap {
     margin: 0 auto;
     height: 50px;
-    border-top: solid 2px darkred;
+    text-align: center;
+}
+
+.gem {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.gem:hover .up-gemstone {
+    stroke-width: 1.2;
+}
+
+.gem svg {
+    height: 70px;
+}
+
+.up-gemstone {
+    stroke: #800080;
+    stroke-width: 1;
 }
 
 /* === MEDIA QUERIES ==== */
@@ -561,6 +562,21 @@ li, ul {
     .kirjeldus {
         width: 100%;
         margin: 20px auto;
+    }
+}
+
+/* Elandilim */
+@media screen and (max-width: 715px) {
+    .about-content,
+    .about-title {
+        width: 100%;
+    }
+
+    .about-thumbnail {
+        display: none;
+    }
+    .about-thumbnail-mobile {
+        display: inline-block;
     }
 }
 

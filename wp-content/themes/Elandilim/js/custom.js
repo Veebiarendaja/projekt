@@ -18,7 +18,7 @@ $(document).ready(function () {
         $('#lightbox').hide();
     });
 
-
+    //Drag ja rightclick block
     $('.image-lightbox, #lightbox-content').bind('dragstart contextmenu', function(){
         return false;
     });
@@ -40,4 +40,10 @@ $(document).ready(function () {
     //Trigger
     $window.on('scroll', menu_appear);
     $window.trigger('scroll');
+
+    //ScrollUp
+    $('.gem').on('click', function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+
+    })
 });
